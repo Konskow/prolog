@@ -56,6 +56,20 @@ permutacja2(L,[X|P]) :-
 	usun(X,L,L1),
 	permutacja2(L1,P).
 
+odwroc([],[]).
+odwroc([H|T],L) :-
+    odwroc(T,R),
+    sklej(R,[H],L).
+
 wypisz([H|T]) :-
-	put(H), wypisz(T).
+	write(H), wypisz(T).
 wypisz([]).
+
+
+odwroc2(L,R) :-
+     odwr2(L,[],R).
+odwr2([H|T],A,R) :-
+     odwr2(T,[H|A],R).
+odwr2([],A,A).
+
+
