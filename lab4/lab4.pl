@@ -40,8 +40,7 @@ odwr([H|T],A,R) :-
 odwr([],A,A).
 
 palindrom(L):-
-    odwroc(L,X),
-    L = X.
+    odwroc(L,L).
 
 przesun([H|Tail],X):-
     sklej(Tail,[H],X).
@@ -56,20 +55,39 @@ nalezy(X,[X|_]).
 nalezy(X,[_|Yogon]) :-
 	nalezy(X,Yogon).
 
-podzbior(L,[]).
-podzbior(L, [HL|TL]):-
-    nalezy(HL,L),
-    podzbior(L,TL).
-
-
 podziel([],[],[]).
 podziel([X],[X],[]).
-podziel([X],[],[X]).
-podziel([],X,Y).
-
-podziel([X],[X|_],Y).
-podziel([A,B|Tail],[A],[B]):-
-    podziel(Tail,[A|Rest],[B,Rest2]).
+podziel([A,B|Tail], [A|T1], [B|T2]):-
+    podziel(Tail, T1, T2).
     
-    
+przepisz([],[]).
+przepisz([A|T],[A|Rest]):-
+    przepisz(T,Rest).
 
+podzbior([],[]).
+podzbior([A|T],[A|T2]):-
+    podzbior(T,T2).
+
+podzbior([_|T], L2):-
+    podzbior(T,L2).
+
+%wyjmij([H|T],X):-
+%    write(H),nl,
+%    H = [_],
+%    wyjmij(H,X).
+
+%wyjmij(H,X):-
+%    H \= [_].
+
+%splaszcz([],X).
+%splaszcz([H|T],X):-
+%    wyjmij(H,X),
+%    splaszcz(T,X).
+
+%lista jest płaska kiedy głowa jest płaska i ogon jest płaski
+%sklejenie płaskiej głowy z płaskim ogonem
+
+
+%splaszcz(X,X).
+%splaszcz([H|T], X):-
+    
