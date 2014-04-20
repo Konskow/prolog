@@ -1,0 +1,86 @@
+1. Co to jest term w logice/prologu.
+-stałe, zmienne,  symbole funkcyjne przyjmujące argumenty 
+Przykłady:
+a,b,c;
+X,Y,Z;
+f(a).
+f(X).
+man(socrates).
+connected(a,b).
+structure(a,X,f(a,b)).
+book(author(john,doe),title(abc_of_prolog)).
+list(a, list(b, list(c, nil))).
+f(f(f(f(f(a))))).
+
+Wszystko powyższe jest termem.
+
+2. Czy jest unifikowalne, jeśli tak, odać przekształcenia unifikujące.
+p(X,Y,Z,X) oraz q(X,X,Y,Z) NIE JESt
+jeśli są różne symbole (np. p i q) to NIE jest unifikowalna
+
+PK: jeżeli p(X,Y,Z,X),p(X,X,Y,Z) to chyba jest unifikowalne
+    X = Y = Z ale nie wiem czy o to chodzi.
+
+3. PK: to samo co wyżej.
+
+
+4. p(X,Y,f(Z),X) oraz p(X,X,f(Y),Z) jest unifikacja
+PK: Y = X, Z = Y, X = Z. czyli w efekcie X = Y = Z.
+
+5. p(X,Y,f(Z,X) oraz p(X,X,Z) w termach skończonych nie ma unifikacji, ale coś pokazywał na wykładzie że może być
+PK:  don't know :(
+
+6. napisz co jest głową H, a co ogonem T
+[[a],b,[c,d]] 
+PK: jeżeli [H|T] to H = [a] T = [b,[c,d]]
+
+7. [[[bury,kot],mruczy]] H=[[bury,kot],mruczy] T = []
+PK. dzieje się tak ponieważ z listy jest tylko jedna lista i ona jest brana jako Head
+
+8. [[mruczy,[kot],cicho],[kolor(kot,bury)]] H = [mruczy,[kot],cicho] T = [[kolor(kot,bury)]]
+
+9. [[mruczy,cichy],[kot,bury]] H = [mruczy,cichy] T = [[kot,bury]]
+
+10. Czy dopasowanie list jest możliwe?
+[kot] oraz [X|Y]
+JEST : X=kot Y=[]
+
+11. [X,Y|Z] oraz [bury,kot,mruczy]
+X = bury
+Y = kot
+Z = [mruczy]
+
+12. [[tu,Y]|Z] oraz [[X,jest],[czarny,pies]]
+PK: sprawdziłem, da się.
+X = tu
+Y = jest
+Z = [[czarny,pies]]
+
+13. [X,mruczy,X] oraz [bury,Y,kot]
+PK: sprawdziłem, nie można. gdyby był kot,Y,kot to by się dało.
+
+14 rozwin skróty
+WAM = warren abstract machine  - do wykonywania prologa na róznych architekturach
+ASP = answet set programming - forma deklaratywnego programowania.
+GMP - GNU_Multiple_Precision
+
+15.Dana jest baza faktów zapisanych przy użyciu predykatu p/2. Zdefiniuj predykat psc/2 realizujący domknięcie symetryczne r.
+
+PK: nie wiem co to jest domknięcie symetryczne ale predykat p/2 oznacza, że predykat wygląda tak: p(_,_).  ( :P ) a predykat psc2 może wygladac tak.. psc2(p(X,Y),p(Y,X)).
+
+16. Czy i co zwróci program:
+ffm(L,[X,Y,Z]) :- append(_,[X,Y,Z],L), Y>X, Y>Z przy wywołaniu ffm([1,3,7,4,3,5,2],P)
+
+PK: append(X,Y,Z) dołacza X do Y i umieszcza wynik w Z. obawiam, że program sie nie wykona, ale sprawdzę..
+    A jednak! Działa. lista cyfr podstawia się pod L i teraz badamy po prostu jaką listę trzech elementów trzeba dodać do czegoś żeby otrzymać L. no i oczywiście P = [3,5,2].
+
+17. Czy i co zwróci program q(FSL,N,S):- append (_,SL,FSL),append (S,_,SL)sumlist(S,N) przy wywołaniu q([1,2,3,5,2,3,2],10,S).
+ PK: wychrzania się coś..
+
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+1. Co to jest unifikacja?
+- mechanizm dopasowywania wzorców,
+
+2. Co to jest rezolucja?
+- metoda wnioskowania logicznego,
+
+3.Program składa się z : 
+- Klazul : fakty i reguły.
+- celu
+
+
+
