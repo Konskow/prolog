@@ -8,5 +8,64 @@
 - Klazul : fakty i reguły.
 - celu
 
+4. Jak działa read/1?
+- np. tak: read(State),write(State),nl.
+
+Do poniższych warto zadeklarować predykaty jako dynamiczne. np :-dynamic(kobieta/1).
+
+
+5. assert/a/z retract/a/z  /1
+ - dodwania i usuwanie FAKTÓW z początku/końca bazy wiedzy.
+
+6. abolish/1
+- usuwanie predykatów np abolish(kobieta/1).
+
+7. retractall/1
+- usuwanie wszystkich klazul danego predykatu np. retractall(kobieta(K)).
+
+8. see/n tell/told 
+- zapis odczyt z pliku.
+
+9. Uruchomienie programu z poziomu systemu operacyjnego:
+- swipl -s program.pl -g go -t halt
+
+10. Cel w programie
+- prolog przystapi do celu po załadowaniu kodu np. :-start
+
+11. trace/0
+- ustawia trace point na wszystkich predykatach, lub na nastepnym zadanym celu
+trace/1 - na wzkazanym predykacie
+trace/2
+
+12. debugging/0 debug/0 nodebug/0
+
+13. Arytmetyka:
+
+X is 2+2
+X=4
+
+Y is 2.5 + ( 4 / 2).
+Y = 4.5
+
+Z is 2 + 0.001.
+Z = 2.0009999999999999 % wut?
+
+UWAGA:
+
+2 + 5 =:= 1 + 4.
+fail.
+
+3+5=2+6
+fail.
+
+ 
+
+
+
+
+
+
+
+
 
 
